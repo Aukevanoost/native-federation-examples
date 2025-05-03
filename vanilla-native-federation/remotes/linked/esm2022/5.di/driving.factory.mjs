@@ -1,0 +1,19 @@
+import { createBrowser } from "lib/3.adapters/browser/browser";
+import { createVersionCheck } from "lib/3.adapters/checks/version.check";
+import { createManifestProvider } from "lib/3.adapters/http/manifest-provider";
+import { createRemoteEntryProvider } from "lib/3.adapters/http/remote-entry-provider";
+import { createRemoteInfoRepository } from "lib/3.adapters/storage/remote-info.repository";
+import { createScopedExternalsRepository } from "lib/3.adapters/storage/scoped-externals.repository";
+import { createSharedExternalsRepository } from "lib/3.adapters/storage/shared-externals.repository";
+const createDriving = (config) => ({
+  versionCheck: createVersionCheck(),
+  manifestProvider: createManifestProvider(),
+  remoteEntryProvider: createRemoteEntryProvider(),
+  remoteInfoRepo: createRemoteInfoRepository(config),
+  scopedExternalsRepo: createScopedExternalsRepository(config),
+  sharedExternalsRepo: createSharedExternalsRepository(config),
+  browser: createBrowser(config)
+});
+export {
+  createDriving
+};

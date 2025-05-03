@@ -1,0 +1,32 @@
+{
+  "version": "0.12.2",
+  "name": "vanilla-native-federation",
+  "author": "aukevanoost",
+  "keywords": [
+    "native-federation",
+    "native-federation-runtime",
+    "micro-frontends"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aukevanoost/vanilla-native-federation.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "dependencies": {
+    "semver": "^7.7.1"
+  },
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./types/lib/index.d.ts",
+      "esm": "./esm2022/index.mjs",
+      "default": "./fesm2022/vanilla-native-federation.mjs"
+    }
+  },
+  "typings": "./types/lib/index.d.ts",
+  "module": "./fesm2022/vanilla-native-federation.mjs",
+  "type": "module"
+}
