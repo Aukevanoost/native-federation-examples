@@ -12,5 +12,6 @@ export class HomepageComponent {
 
     constructor() {
         this.loadRemoteModule("explore", "./header").then(m => m.bootstrap(this.loadRemoteModule));
+        this.loadRemoteModule("explore", "./footer").then(m => m.bootstrap(this.loadRemoteModule));
     }
 }

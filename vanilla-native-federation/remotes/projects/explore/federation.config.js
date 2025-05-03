@@ -7,6 +7,7 @@ module.exports = withNativeFederation({
   exposes: {
     './homepage': './projects/explore/src/homepage/homepage.bootstrap.ts',
     './header': './projects/explore/src/header/header.bootstrap.ts',
+    './footer': './projects/explore/src/footer/footer.bootstrap.ts',
   },
 
   shared: {

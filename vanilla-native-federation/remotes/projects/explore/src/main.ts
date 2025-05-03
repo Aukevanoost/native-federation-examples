@@ -5,6 +5,7 @@ initFederation({}, {
   ...config.useShimImportMap({ shimMode: true })
 })
   .then(async ({loadRemoteModule}) => {
+    await import('./footer/footer.bootstrap');
     await import('./header/header.bootstrap');
     const home = await import('./homepage/homepage.bootstrap')
     await home.bootstrap(loadRemoteModule);
