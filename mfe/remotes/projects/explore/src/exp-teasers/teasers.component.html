@@ -1,0 +1,15 @@
+<div class="teaser__container">
+  @for (teaser of teasers(); track teaser.key; let first = $first) {
+    <a 
+      class="teaser__card" 
+      [href]="url(teaser.key)"
+      [id]="'goto-' + teaser.key">         
+      <img 
+        [src]="teaser.image | fromCDN: '500'" 
+        width="500" 
+        sizes="500px" 
+        class="teaser__img"/>
+      <p class="teaser__title">{{teaser.title}}</p>
+    </a> 
+  }
+</div>

@@ -1,0 +1,65 @@
+:host {
+  --outer-space: 1.5rem;
+
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  max-width: calc(1000px);
+  padding: 0;
+}
+
+.exp_recommendations {
+  padding: 1rem;
+  margin: 0 -1rem 3rem;
+
+  &__list {  
+    position: relative;
+    display: grid;
+    gap: 40px;
+    padding: 0;
+    list-style-type: none;
+
+    @media (max-width: 499px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// --- RECOMMENDATION
+
+.exp_recommendation {
+  margin: 0;
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    display: block;
+  }
+
+  &__name {
+    margin: 1rem 0;
+    color: black;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
+  .exp_Recommendation:nth-child(4) {
+    display: none;
+  }
+}
