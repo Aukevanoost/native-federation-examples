@@ -1,0 +1,43 @@
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<wicket:extend>
+    <main class="d_ProductPage">
+        <div class="d_ProductPage__details">
+            <img wicket:id="image" class="d_ProductPage__productImage" />
+
+            <div class="d_ProductPage__productInformation">
+                <h2 class="d_ProductPage__title" wicket:id="name"></h2>
+
+                <ul class="d_ProductPage__highlights">
+                    <wicket:container wicket:id="productHighlights">
+                        <li wicket:id="listItemContainer"></li>
+                    </wicket:container>
+                </ul>
+
+                <ul class="d_ProductPage__variants">
+                    <wicket:container wicket:id="variantOptions">
+                        <li wicket:id="listItemContainer"></li>
+                    </wicket:container>
+                </ul>
+
+                <div wicket:id="addToCartPanel"></div>
+            </div>
+        </div>
+        <div class="e_HomePage__recommendations">
+            <div class="e_Recommendations">
+                <h2>Recommendations</h2>
+                <ul class="e_Recommendations_list">
+                    <wicket:container wicket:id="recommendationCards">
+                        <li wicket:id="listItemContainer"></li>
+                    </wicket:container>
+                </ul>
+            </div>
+        </div>
+    </main>
+</wicket:extend>
+
+
+</body>
+</html>

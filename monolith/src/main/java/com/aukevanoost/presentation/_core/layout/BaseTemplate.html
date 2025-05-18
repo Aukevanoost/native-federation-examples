@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tractor Store</title>
+        <meta
+                name="description"
+                content="a non-trivial micro frontends example project"
+        />
+        <script type="application/json" id="mfe-manifest">
+            {
+                "explore": "http://localhost:4201/remoteEntry.json"
+            }
+        </script>
+        <link rel="stylesheet" href="style/main.css" type="text/css" media="screen" title="Stylesheet" />
+    </head>
+    <body>
+        <div id="header" wicket:id="headerPanel">header</div>
+        <div id="body">
+            <wicket:child/>
+        </div>
+        <div id="footer" wicket:id="footerPanel">footer</div>
+        <wicket:container wicket:id="footer-container"/>
+
+        <!-- Orchestrator/Shell -->
+        <script src="https://unpkg.com/vanilla-native-federation@0.12.4/quickstart/debug.mjs"></script>
+    </body>
+</html>

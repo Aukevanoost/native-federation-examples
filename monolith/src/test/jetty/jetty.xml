@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_10_0.dtd">
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+	<!-- HTTP Configuration -->
+	<New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+		<Set name="secureScheme">https</Set>
+		<Set name="securePort"><Property name="jetty.secure.port" default="8443" /></Set>
+		<Set name="outputBufferSize">32768</Set>
+		<Set name="requestHeaderSize">8192</Set>
+		<Set name="responseHeaderSize">8192</Set>
+		<Set name="sendServerVersion">false</Set>
+		<Set name="sendDateHeader">false</Set>
+		<Set name="headerCacheSize">512</Set>
+
+		<!-- Uncomment to enable handling of X-Forwarded- style headers
+        <Call name="addCustomizer">
+            <Arg><New class="org.eclipse.jetty.server.ForwardedRequestCustomizer"/></Arg>
+        </Call>
+        -->
+	</New>
+
+	<!-- WebApp Context Configuration -->
+	<New id="context" class="org.eclipse.jetty.webapp.WebAppContext">
+		<Set name="contextPath">/</Set>
+		<Set name="war"><Property name="jetty.webapps" default="."/>/target/tractorStore-1.0-SNAPSHOT.war</Set>
+		<Set name="extraClasspath"><Property name="jetty.base" default="."/>/target/classes/</Set>
+		<Set name="configurationDiscovered">true</Set>
+		<Call name="setInitParameter">
+			<Arg>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</Arg>
+			<Arg>false</Arg>
+		</Call>
+	</New>
+
+	<!-- Set the handler to our WebApp Context -->
+	<Set name="handler"><Ref refid="context"/></Set>
+
+	<!-- Include the jetty-http.xml configuration -->
+	<Ref refid="Server">
+		<Call name="addBean">
+			<Arg>
+				<New class="org.eclipse.jetty.xml.XmlConfiguration">
+					<Arg><Property name="jetty.home" default="."/>/src/main/jetty/jetty-http.xml</Arg>
+				</New>
+			</Arg>
+		</Call>
+	</Ref>
+</Configure>

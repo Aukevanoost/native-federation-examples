@@ -1,0 +1,89 @@
+target
+dist
+.classpath
+.project
+.settings
+.angular/
+.factorypath
+.externalToolBuilders
+.fbExcludeFilterFile
+*.log
+*.log.?
+.rebel.xml.bak
+logs
+dependency-reduced-pom.xml
+Thumbs.db
+.thumbcache
+rebel.xml
+.idea/
+*.iml
+*.tern-project
+.sass-cache
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+livereload.php
+.metadata
+config.codekit
+.apt_generated_tests/
+.vscode/
+Zendesk add-on.zip
+*.swp
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+*/dist
+dist
+/tmp
+/out-tsc
+/bazel-out
+/storybook-static
+
+# Node
+*/node_modules
+/node_modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+

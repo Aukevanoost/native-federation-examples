@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<wicket:panel>
+    <form wicket:id="form" action="/checkout/cart/add" method="POST" class="c_AddToCart" data-boundary="checkout">
+        <input type="hidden" wicket:id="productSku" />
+        <input type="hidden" wicket:id="variantSku" />
+        <div class="c_AddToCart__information">
+            <p wicket:id="price"></p>
+            <wicket:container wicket:id="inventoryState"></wicket:container>
+        </div>
+
+        <button
+                type="submit"
+                name="action"
+                wicket:id="action"
+                class="c_Button c_Button--primary c_AddToCart__button c_Button--size-normal"
+                value="addToCart">
+            <span class="c_Button__inner">Add to basket</span>
+        </button>
+
+        <div wicket:id="confirmationContainer" class="c_AddToCart__confirmed">
+            <p>Tractor was added.</p>
+            <a wicket:id="cartLink" class="c_AddToCart__link">View in basket</a>
+        </div>
+    </form>
+
+    <wicket:fragment wicket:id="inStockFragment">
+        <p class="c_AddToCart__stock c_AddToCart__stock--ok">
+            <span wicket:id="inventory">x</span> in stock, free shipping
+        </p>
+    </wicket:fragment>
+
+    <wicket:fragment wicket:id="outOfStockFragment">
+        <p class="c_AddToCart__stock c_AddToCart__stock--empty">
+            out of stock
+        </p>
+    </wicket:fragment>
+</wicket:panel>
+</body>
+</html>

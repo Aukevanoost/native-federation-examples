@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+            <main class="e_HomePage" id="homepage">
+                <exp-teasers></exp-teasers>
+                <exp-recommendations product="CL-01-GY,AU-07-MT"></exp-recommendations>
+            </main>
+
+            <script>
+                window.addEventListener('mfe-loader-available', (e) => {
+                    Promise.all([
+                        e.detail.loadRemoteModule("explore", "./teasers").then(m => m.bootstrap(e.detail.loadRemoteModule)),
+                        e.detail.loadRemoteModule("explore", "./recommendations").then(m => m.bootstrap(e.detail.loadRemoteModule))
+                    ]);
+                }, {once: true});
+            </script>
+        </wicket:extend>
+    </body>
+</html>

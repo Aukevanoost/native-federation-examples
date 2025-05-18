@@ -1,0 +1,17 @@
+@import url("./base/reset.css");
+
+@import url("./layout/header.css");
+@import url("./layout/navigation.css");
+@import url("./layout/footer.css");
+
+@import url("./components/recommendation.css");
+@import url("./components/filter.css");
+@import url("./components/product.css");
+@import url("./components/add-to-cart.css");
+@import url("./components/button.css");
+
+@import url("./pages/home.css");
+@import url("./pages/category.css");
+@import url("./pages/stores.css");
+@import url("./pages/product.css");
+@import url("./pages/cart.css");

@@ -1,0 +1,10 @@
+{
+  "name": "teasers",
+  "shared": [],
+  "exposes": [
+    {
+      "key": "./Component",
+      "outFileName": "Component-DEJIKITW.js"
+    }
+  ]
+}

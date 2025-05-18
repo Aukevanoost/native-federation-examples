@@ -1,0 +1,31 @@
+services:
+  cdn:
+    container_name: cdn
+    build:
+      context: ./mfe/cdn
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  discovery:
+    container_name: discovery
+    build:
+      context: ./mfe/discovery
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+  monolith:
+    container_name: monolith
+    build:
+      context: ./monolith
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "8443:8443"
+    restart: unless-stopped

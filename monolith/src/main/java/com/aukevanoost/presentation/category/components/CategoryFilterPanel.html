@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<wicket:panel>
+    <li wicket:id="categoryFilter">
+        <wicket:container wicket:id="filterContainer"></wicket:container>
+    </li>
+
+    <wicket:fragment wicket:id="activeFragment">
+        <strong wicket:id="name"></strong>
+    </wicket:fragment>
+
+    <wicket:fragment wicket:id="inactiveFragment">
+        <a wicket:id="url">
+            <span wicket:id="name"></span>
+        </a>
+    </wicket:fragment>
+</wicket:panel>
+</body>
+</html>

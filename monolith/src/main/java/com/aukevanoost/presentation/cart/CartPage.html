@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+<wicket:extend>
+    <main class="c_CartPage">
+        <h2>Basket</h2>
+        <ul class="c_CartPage__lineItems">
+            <li wicket:id="cartItems" class="c_LineItem">
+                <a wicket:id="url" class="c_LineItem__image">
+                    <img wicket:id="image" />
+
+                    <!--                    <img-->
+<!--                            src="${src(image, 200)}"-->
+<!--                            srcset="${srcset(image, [200, 400])}"-->
+<!--                            sizes="200px"-->
+<!--                            alt="${name}"-->
+<!--                            width="200"-->
+<!--                            height="200"-->
+<!--                    />-->
+                </a>
+                <div class="c_LineItem__details">
+                    <a href="/URL" class="c_LineItem__name">
+                        <strong>NAME</strong><br /><span wicket:id="sku"></span>
+                    </a>
+
+                    <div class="c_LineItem__quantity">
+                        <span wicket:id="quantity"></span>
+                    </div>
+                    <div class="c_LineItem__price" wicket:id="total"></div>
+                </div>
+            </li>
+        </ul>
+        <hr />
+        <p class="c_CartPage__total">
+            Total: <span wicket:id="totalAmount"></span> Ø
+        </p>
+    </main>
+</wicket:extend>
+</body>
+</html>

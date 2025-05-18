@@ -1,0 +1,30 @@
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<wicket:extend>
+    <main class="e_CategoryPage">
+        <h2 wicket:id="title"></h2>
+        <div class="e_CategoryPage__subline" wicket:id="actionsContainer">
+            <p><span wicket:id="productsSize"></span> products</p>
+            <div class="e_Filter">
+                Filter:
+                <ul>
+                    <wicket:container wicket:id="filterCards">
+                        <li wicket:id="listItemContainer"></li>
+                    </wicket:container>
+                </ul>
+
+            </div>
+        </div>
+        <ul class="e_CategoryPage_list">
+            <wicket:container wicket:id="productCards">
+                <li class="e_Product" wicket:id="listItemContainer"></li>
+            </wicket:container>
+        </ul>
+    </main>
+</wicket:extend>
+
+
+</body>
+</html>
