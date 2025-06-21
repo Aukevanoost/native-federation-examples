@@ -154,20 +154,6 @@ mvn exec:java -Dexec.mainClass="com.aukevanoost.Start"
 # Or use the Docker image!
 ```
 
-### Development Servers
-```bash
-# Angular micro frontends
-ng serve explore
-# Available at: http://localhost:4201
-
-# Wicket monolith
-mvn jetty:run
-# Available at: http://localhost:8080
-
-# REST API server
-# Available at: http://localhost:8081
-```
-
 ## 🔧 Configuration
 
 ### Angular Environment Configuration
