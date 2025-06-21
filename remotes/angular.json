@@ -31,7 +31,7 @@
 				"serve": {
 					"builder": "@angular-architects/native-federation:build",
 					"options": {
-						"target": "explore:serve-original:production",
+						"target": "explore:serve-original:development",
 						"rebuildDelay": 0,
 						"dev": true,
 						"port": 0
@@ -58,7 +58,6 @@
 								"input": "projects/explore/public"
 							}
 						],
-						"baseHref": "http://localhost:4000/explore/",
 						"styles": [
 							"projects/explore/src/styles.scss"
 						],

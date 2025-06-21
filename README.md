@@ -118,10 +118,25 @@ cd remotes/
 npm install
 
 # Build the micro frontends
+npm run build explore
+
+# Start development server
+npm start explore
+```
+
+#### CDN (Images etc)
+```bash
+# Navigate to remotes directory
+cd cdn/
+
+# Install dependencies
+npm install
+
+# Build the micro frontends
 npm run build
 
 # Start development server
-npm start <micro-frontend>
+npm start -- --cors
 ```
 
 #### Backend (Wicket Monolith)
