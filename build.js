@@ -4,7 +4,7 @@ import * as path from "path";
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const environments = ['dev'];
+const environments = ['simple','dev'];
 const staticFiles = ["index.html", "style.css"];
 
 const config = {
