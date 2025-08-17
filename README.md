@@ -1,4 +1,4 @@
-# Wicket + Angular Native Federation Examples
+Angular Native Federation Orchestrator
 
 This demo application demonstrates how Angular micro frontends can be loaded into any web application using native federation. The project showcases two independent micro frontend components that can be consumed by a host/shell application. This example includes an orchestrator that uses the Piral feed to fetch 2 angular remotes.
 
