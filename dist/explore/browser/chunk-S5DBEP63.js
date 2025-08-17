@@ -1,4 +1,5 @@
-function t(e){}export{t as a};/*! Bundled license information:
+function t(e){}export{t as a};
+/*! Bundled license information:
 
 @angular/core/fesm2022/weak_ref-BaIq-pgY.mjs:
   (**

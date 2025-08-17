@@ -2,7 +2,7 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 module.exports = withNativeFederation({
 
-  name: 'explore',
+  name: '@tractor-store/explore',
 
   exposes: {
     './recommendations': './projects/explore/src/exp-recommendations/recommendations.bootstrap.ts',
