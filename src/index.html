@@ -1,30 +1,31 @@
 <html>
   <head>
     <title>Shell</title>
-    <meta name="piral" content="https://feed.piral.cloud" />
-    <meta name="feed" content="vnf" />
+    <meta
+      name="piral"
+      content="https://feed.piral.cloud/api/v1/native-federation/vnf"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <main class="e_HomePage" id="homepage">
-      <h1>Explore</h1>
-      <exp-teasers></exp-teasers>
-      <exp-recommendations></exp-recommendations>
-    </main>
+    <h1>Micro frontend:</h1>
+    <app-mfe1></app-mfe1>
 
     <script type="esms-options">
       { "shimMode": true }
     </script>
 
     <script type="module-shim">
-      window.addEventListener('mfe-loader-available', async (e) => {
-          await Promise.all([
-              e.detail.mount("@tractor-store/explore", "./recommendations"),
-              e.detail.mount("@tractor-store/explore", "./teasers"),
-          ])
-      }, {once: true});
+      window.addEventListener(
+        "mfe-loader-available",
+        (e) => {
+          // Load your remote modules, a remote can have multiple modules
+          e.detail.loadRemoteModule("@tractor-store/mfe1", "./Component");
+        },
+        { once: true }
+      );
     </script>
 
-    <script src="./dev/orchestrator.js"></script>
+    <script src="./simple/orchestrator.js"></script>
   </body>
 </html>
