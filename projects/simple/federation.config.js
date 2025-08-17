@@ -18,6 +18,9 @@ module.exports = withNativeFederation({
     'rxjs/testing',
     'rxjs/webSocket',
     (pkg) => pkg.startsWith('vanilla-native-federation'),
-  ]
+  ],
   
+  features: {
+    ignoreUnusedDeps: true
+  }
 });
