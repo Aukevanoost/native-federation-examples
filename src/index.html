@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Shell</title>
+    <meta name="piral" content="https://feed.piral.cloud" />
+    <meta name="feed" content="vnf" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="e_HomePage" id="homepage">
+      <h1>Explore</h1>
+      <exp-teasers></exp-teasers>
+      <exp-recommendations></exp-recommendations>
+    </main>
+
+    <script type="esms-options">
+      { "shimMode": true }
+    </script>
+
+    <script type="module-shim">
+      window.addEventListener('mfe-loader-available', async (e) => {
+          await Promise.all([
+              e.detail.mount("@tractor-store/explore", "./recommendations"),
+              e.detail.mount("@tractor-store/explore", "./teasers"),
+          ])
+      }, {once: true});
+    </script>
+
+    <script src="./dev/orchestrator.js"></script>
+  </body>
+</html>

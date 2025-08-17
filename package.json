@@ -1,0 +1,26 @@
+{
+  "name": "vnf-orchestrator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "start": "http-server ./dist --cors --port 4200",
+    "type-check": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@softarc/native-federation-runtime": "^3.0.2",
+    "es-module-shims": "^2.0.9",
+    "tslib": "^2.8.1",
+    "vanilla-native-federation": "^0.18.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "http-server": "^14.1.1",
+    "json5": "^2.2.3",
+    "typescript": "^5.8.3"
+  }
+}
