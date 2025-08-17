@@ -1,0 +1,5 @@
+{
+  "name": "@tractor-store/simple",
+  "version": "1.0.0",
+  "main": "browser/remoteEntry.json"
+}
