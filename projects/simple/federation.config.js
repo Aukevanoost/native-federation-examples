@@ -6,6 +6,7 @@ module.exports = withNativeFederation({
 
   exposes: {
     './bootstrap': './projects/simple/src/bootstrap.ts',
+    './component': './projects/simple/src/app/app.component.ts'
   },
 
   shared: {
@@ -19,8 +20,7 @@ module.exports = withNativeFederation({
     'rxjs/webSocket',
     (pkg) => pkg.startsWith('vanilla-native-federation'),
   ],
-  
-  features: {
-    ignoreUnusedDeps: true
-  }
+features: {
+  ignoreUnusedDeps: true
+}
 });

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Application</title>
+
+    <!-- 1. Define your micro frontends (remotes) -->
+    <meta
+      name="mfe-feed"
+      content="https://feed.piral.cloud/api/v1/native-federation/vnf"
+    />
+    <!-- 2. Handle loaded modules -->
+    <script>
+      window.addEventListener(
+        "mfe-loader-available",
+        (e) => {
+          // Load your remote modules, a remote can have multiple modules
+          e.detail.loadRemoteModule("@tractor-store/simple", "./bootstrap");
+        },
+        { once: true }
+      );
+    </script>
+
+    <!-- 3. Include the orchestrator runtime -->
+    <script src="https://unpkg.com/vanilla-native-federation@0.19.0/quickstart.mjs"></script>
+  </head>
+  <body>
+    <!-- 4. Use your loaded components -->
+    <h1>Micro frontend:</h1>
+    <mfe-simple></mfe-simple>
+  </body>
+</html>

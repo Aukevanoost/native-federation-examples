@@ -2,6 +2,7 @@ import { initFederation } from '@angular-architects/native-federation';
 import { EnvironmentConfig } from './app/env.config';
 
 const mockEnvironment: EnvironmentConfig = {
+  tag: 'latest',
   domain: 'https://localhost:4201',
   scopeUrl: '/',
   production: false,

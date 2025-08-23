@@ -234,7 +234,17 @@
       </svg>
       <h1>Hello, {{ title() }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <hr />
+      <label for="tag">Choose a tag: </label>
+      <select id="tag" name="tag" [formControl]="tagInput">
+        <option value="latest">latest</option>
+        <option value="next">next</option>
+      </select>
+      &nbsp;
+      <button (click)="setTag($event)">Save and reload</button>
+      <hr />
       <p><b>Env variables:</b></p>
+
       <pre>{{ env | json }}</pre>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
