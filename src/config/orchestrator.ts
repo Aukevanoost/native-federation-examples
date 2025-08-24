@@ -19,6 +19,10 @@ export interface EnvironmentConfig {
   tag?: string; // latest or next?
 }
 
+/**
+ * Creates a bootstrapper function for a micro frontend
+ * module that includes environment configuration.
+ */
 function createBootstrapper(
   loadRemoteModule: LoadRemoteModule<BootstrapModule>,
   remoteInfoRepo: ForRemoteInfoStorage,
