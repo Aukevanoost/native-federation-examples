@@ -1,0 +1,22 @@
+{
+	"scripts": {
+		"build": "tsx build.ts",
+		"preview": "npx serve dist/browser"
+	},
+	"dependencies": {
+		"@softarc/native-federation": "^3.3.5",
+		"preact": "^10.26.9"
+	},
+	"devDependencies": {
+		"esbuild": "^0.23.0",
+		"eslint": "^9.34.0",
+		"eslint-config-preact": "^2.0.0",
+		"@softarc/native-federation-esbuild": "^3.3.5",
+		"serve": "^14.2.3",
+		"tsx": "^4.20.5",
+		"typescript": "^5.9.2"
+	},
+	"eslintConfig": {
+		"extends": "preact"
+	}
+}
