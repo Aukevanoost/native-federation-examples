@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <mfe-config></mfe-config>
+    <mfe-simple></mfe-simple>
 
     <script type="esms-options">
       { "shimMode": true }
@@ -16,12 +16,12 @@
         "mfe-loader-available",
         (e) => {
           // Load your remote modules, a remote can have multiple modules
-          e.detail.mount("@tractor-store/config", "./bootstrap");
+          e.detail.loadRemoteModule("@tractor-store/simple", "./bootstrap");
         },
         { once: true }
       );
     </script>
 
-    <script src="./config/orchestrator.js"></script>
+    <script src="./caching/orchestrator.js"></script>
   </body>
 </html>
