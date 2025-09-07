@@ -4,7 +4,7 @@ import * as path from "path";
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const environments = ['simple','dev', 'config', 'caching', 'race'];
+const environments = ['simple', 'config', 'caching', 'race'];
 
 const config = {
   srcDir: 'src',

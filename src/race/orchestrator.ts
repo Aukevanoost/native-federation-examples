@@ -1,6 +1,7 @@
 import "es-module-shims";
 
 import { initFederation } from "vanilla-native-federation";
+import { ResourceRegistry } from "vanilla-native-federation/sdk";
 import {
   NFOptions,
   useShimImportMap,
@@ -25,7 +26,7 @@ import {
       })
     );
     if ((window as any).__NF_REGISTRY__ !== undefined) {
-      (window as any).__NF_REGISTRY__.register("orch.init-ready", {
+      ((window as any).__NF_REGISTRY__ as ResourceRegistry).register("orch.init-ready", {
         loadRemoteModule,
       });
     }
