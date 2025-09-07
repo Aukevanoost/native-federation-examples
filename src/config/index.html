@@ -2,10 +2,9 @@
   <head>
     <title>Shell</title>
     <meta name="piral" content="https://feed.piral.cloud/api/v1/native-federation/vnf" />
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <mfe-simple></mfe-simple>
+    <mfe-config></mfe-config>
 
     <script type="esms-options">
       { "shimMode": true }
@@ -16,12 +15,12 @@
         "mfe-loader-available",
         (e) => {
           // Load your remote modules, a remote can have multiple modules
-          e.detail.loadRemoteModule("@tractor-store/simple", "./bootstrap");
+          e.detail.mount("@tractor-store/config", "./bootstrap");
         },
         { once: true }
       );
     </script>
 
-    <script src="./caching/orchestrator.js"></script>
+    <script src="./orchestrator.js"></script>
   </body>
 </html>

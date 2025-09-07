@@ -35,6 +35,7 @@ function createBootstrapper(
       .map((info) => info.scopeUrl)
       .orElse("/");
 
+    console.log(module);
     return module.bootstrap(env, loadRemoteModule);
   };
 }

@@ -4,8 +4,7 @@ import * as path from "path";
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const environments = ['simple','dev', 'config', 'caching'];
-const staticFiles = ["index.html", "style.css"];
+const environments = ['simple','dev', 'config', 'caching', 'race'];
 
 const config = {
   srcDir: 'src',
@@ -35,13 +34,29 @@ function cleanAndSetup(dir) {
 }
 
 function copyFiles(src, dist) {
-  staticFiles.forEach(file => {
-    const srcPath = path.join(src, file);
-    if (fs.existsSync(srcPath)) {
-      fs.copyFileSync(srcPath, path.join(dist, file));
-      console.log(`Copied ${file}`);
-    } else {
-      console.warn(`Warning: ${srcPath} not found`);
+  environments.forEach(folder => {
+    const srcFolderPath = path.join(src, folder);
+    const distFolderPath = path.join(dist, folder);
+    
+    if (fs.existsSync(srcFolderPath)) {
+      copyResource(srcFolderPath, distFolderPath);
+    }
+  });
+}
+
+function copyResource(srcDir, distDir) {
+  const items = fs.readdirSync(srcDir, { withFileTypes: true });
+  
+  items.forEach(item => {
+    const srcPath = path.join(srcDir, item.name);
+    const distPath = path.join(distDir, item.name);
+    
+    if (item.isDirectory()) {
+      fs.mkdirSync(distPath, { recursive: true });
+      copyResource(srcPath, distPath);
+    } else if (item.isFile() && !item.name.endsWith('.ts')) {
+      fs.copyFileSync(srcPath, distPath);
+      console.log(`Copied ${path.relative(process.cwd(), srcPath)} to ${path.relative(process.cwd(), distPath)}`);
     }
   });
 }

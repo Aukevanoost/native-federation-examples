@@ -1,0 +1,28 @@
+<!-- AVOID A RACE CONDITION -->
+<html>
+  <head>
+    <title>Shell</title>
+    <meta name="piral" content="https://feed.piral.cloud/api/v1/native-federation/vnf" />
+  </head>
+  <body>
+    <mfe-simple></mfe-simple>
+
+    <!-- Event registry -->
+    <script src="./registry.mjs"></script>
+
+    <script type="esms-options">
+      { "shimMode": true }
+    </script>
+
+    <!-- Register subscription -->
+    <script type="module-shim">
+      window.__NF_REGISTRY__.get('orch.init-ready').then(({ loadRemoteModule }) => {
+          // Load your remote modules, a remote can have multiple modules
+          loadRemoteModule("@tractor-store/simple", "./bootstrap");
+      });
+    </script>
+
+    <!-- Register event -->
+    <script src="./orchestrator.js"></script>
+  </body>
+</html>
