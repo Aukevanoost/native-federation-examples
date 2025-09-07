@@ -3,7 +3,7 @@
   "shared": [
     {
       "packageName": "@angular/common",
-      "outFileName": "_angular_common.19MMKYsiNy.js",
+      "outFileName": "_angular_common.19MMKYsiNy-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -11,7 +11,7 @@
     },
     {
       "packageName": "@angular/common/http",
-      "outFileName": "_angular_common_http.w3WdyeKTw3.js",
+      "outFileName": "_angular_common_http.w3WdyeKTw3-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -19,7 +19,7 @@
     },
     {
       "packageName": "@angular/core",
-      "outFileName": "_angular_core.fMzTXauzGg.js",
+      "outFileName": "_angular_core.fMzTXauzGg-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -27,7 +27,7 @@
     },
     {
       "packageName": "@angular/core/primitives/di",
-      "outFileName": "_angular_core_primitives_di.B3MkcOOF3i.js",
+      "outFileName": "_angular_core_primitives_di.B3MkcOOF3i-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -35,7 +35,7 @@
     },
     {
       "packageName": "@angular/core/primitives/signals",
-      "outFileName": "_angular_core_primitives_signals.RJ_E1Hy4S0.js",
+      "outFileName": "_angular_core_primitives_signals.RJ_E1Hy4S0-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -43,7 +43,7 @@
     },
     {
       "packageName": "@angular/elements",
-      "outFileName": "_angular_elements.yQwFM6wsdy.js",
+      "outFileName": "_angular_elements.yQwFM6wsdy-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -51,7 +51,7 @@
     },
     {
       "packageName": "@angular/platform-browser",
-      "outFileName": "_angular_platform_browser.0VXw4JpO8t.js",
+      "outFileName": "_angular_platform_browser.0VXw4JpO8t-dev.js",
       "requiredVersion": "^20.0.2",
       "singleton": true,
       "strictVersion": true,
@@ -59,7 +59,7 @@
     },
     {
       "packageName": "rxjs",
-      "outFileName": "rxjs.JT2OMAiOWh.js",
+      "outFileName": "rxjs.JT2OMAiOWh-dev.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -67,7 +67,7 @@
     },
     {
       "packageName": "rxjs/operators",
-      "outFileName": "rxjs_operators.L_stU_h0uz.js",
+      "outFileName": "rxjs_operators.L_stU_h0uz-dev.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -75,7 +75,7 @@
     },
     {
       "packageName": "tslib",
-      "outFileName": "tslib.uwKP6tQyON.js",
+      "outFileName": "tslib.uwKP6tQyON-dev.js",
       "requiredVersion": "^2.3.0",
       "singleton": true,
       "strictVersion": true,
@@ -86,50 +86,57 @@
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-YXNFSCUR",
-      "outFileName": "chunk-YXNFSCUR.js"
+      "packageName": "@nf-internal/chunk-45SKNTCV",
+      "outFileName": "chunk-45SKNTCV.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-NBAXJWZT",
-      "outFileName": "chunk-NBAXJWZT.js"
+      "packageName": "@nf-internal/chunk-WXYJN4O7",
+      "outFileName": "chunk-WXYJN4O7.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-TMJ3XJ2K",
-      "outFileName": "chunk-TMJ3XJ2K.js"
+      "packageName": "@nf-internal/chunk-IP4L7SRR",
+      "outFileName": "chunk-IP4L7SRR.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-TKMKNFS6",
-      "outFileName": "chunk-TKMKNFS6.js"
+      "packageName": "@nf-internal/chunk-5DWKIDR3",
+      "outFileName": "chunk-5DWKIDR3.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-4CLCTAJ7",
-      "outFileName": "chunk-4CLCTAJ7.js"
+      "packageName": "@nf-internal/chunk-WDMUDEB6",
+      "outFileName": "chunk-WDMUDEB6.js"
     }
   ],
   "exposes": [
     {
       "key": "./bootstrap",
-      "outFileName": "bootstrap-OAX54NTD.js"
+      "outFileName": "bootstrap.js",
+      "dev": {
+        "entryPoint": "/home/auke/Projects/Personal/native-federation-examples/projects/events/src/bootstrap.ts"
+      }
     },
     {
       "key": "./component",
-      "outFileName": "component-TSP6SHFW.js"
+      "outFileName": "component.js",
+      "dev": {
+        "entryPoint": "/home/auke/Projects/Personal/native-federation-examples/projects/events/src/app/app.component.ts"
+      }
     }
-  ]
+  ],
+  "buildNotificationsEndpoint": "/@angular-architects/native-federation:build-notifications"
 }

@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-KEXQCPTP.js";import{createApplication as t}from"@angular/platform-browser";import{provideZonelessChangeDetection as i}from"@angular/core";var e={providers:[i()]};import{createCustomElement as m}from"@angular/elements";t(e).then(({injector:p})=>{customElements.define("mfe-simple",m(o,{injector:p}))});

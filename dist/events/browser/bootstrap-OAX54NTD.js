@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-HGZK3TEG.js";import{createApplication as i}from"@angular/platform-browser";import{provideZonelessChangeDetection as t}from"@angular/core";var e={providers:[t()]};import{createCustomElement as n}from"@angular/elements";i(e).then(({injector:p})=>{customElements.define("mfe-events",n(o,{injector:p}))});

@@ -1,19 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { NFEventRegistry } from 'vanilla-native-federation/sdk';
 
 declare global {
   interface Window {
-    __NF_REGISTRY__: {
-      emit<T>(type: string, data: T): void;
-      on<T>(
-        type: string,
-        callback: (event: { data: T; timestamp: number }) => void
-      ): () => void;
-      register<T>(
-        name: string,
-        resource: T | (() => Promise<T> | T)
-      ): Promise<void>;
-      onReady<T>(name: string, callback: (resource: T) => void): () => void;
-    };
+    __NF_REGISTRY__: NFEventRegistry;
   }
 }
 
