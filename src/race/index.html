@@ -5,11 +5,10 @@
     <meta name="piral" content="https://feed.piral.cloud/api/v1/native-federation/vnf" />
   </head>
   <body>
-    <mfe-simple></mfe-simple>
+    <mfe-events></mfe-events>
 
     <!-- Event registry -->
-    <!-- <script src="https://unpkg.com/vanilla-native-federation@0.19.4/registry.mjs"></script> -->
-    <script src="./registry.mjs"></script>
+    <script src="https://unpkg.com/vanilla-native-federation@0.19.6/registry.mjs"></script>
 
     <script type="esms-options">
       { "shimMode": true }
@@ -18,7 +17,7 @@
     <!-- Register subscription -->
     <script type="module-shim">
       window.__NF_REGISTRY__.onReady('orch.init-ready', ({ loadRemoteModule }) => {
-        loadRemoteModule("@tractor-store/simple", "./bootstrap");
+        loadRemoteModule("@tractor-store/events", "./bootstrap");
       });
     </script>
 

@@ -1,12 +1,35 @@
 import "es-module-shims";
 
 import { initFederation } from "vanilla-native-federation";
-import { ResourceRegistry } from "vanilla-native-federation/sdk";
+import { NFEventRegistry } from "vanilla-native-federation/sdk";
 import {
   NFOptions,
   useShimImportMap,
   sessionStorageEntry,
 } from "vanilla-native-federation/options";
+
+declare global {
+  interface Window {
+    __NF_REGISTRY__: NFEventRegistry;
+  }
+}
+
+let amountOfClicks = 0;
+const unsubscribeA = window.__NF_REGISTRY__.on("events-mfe:clicked", (event) => {
+  console.log("Event clicked:", event.data);
+  amountOfClicks++;
+  if (amountOfClicks === 3) {
+    console.log("Received 3 clicks, unsubscribing from further 'clicked' events.");
+    unsubscribeA();
+  }
+});
+
+const unsubscribeB = window.__NF_REGISTRY__.on("events-mfe:request-action", (event) => {
+  console.log("An action needs to be performed!", event.data);
+  // Handle event
+});
+
+// unsubscribeB(); // Call this to stop listening to navigation events
 
 (async () => {
   try {
@@ -26,7 +49,7 @@ import {
       })
     );
     if ((window as any).__NF_REGISTRY__ !== undefined) {
-      ((window as any).__NF_REGISTRY__ as ResourceRegistry).register("orch.init-ready", {
+      ((window as any).__NF_REGISTRY__ as NFEventRegistry).register("orch.init-ready", {
         loadRemoteModule,
       });
     }
