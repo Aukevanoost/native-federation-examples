@@ -1,7 +1,7 @@
 import "es-module-shims";
 
 import { initFederation } from "vanilla-native-federation";
-import { NFEventRegistry } from "vanilla-native-federation/sdk";
+import { NFEventRegistry } from "vanilla-native-federation/registry";
 import {
   NFOptions,
   useShimImportMap,
