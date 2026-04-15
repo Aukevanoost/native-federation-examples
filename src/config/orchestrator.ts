@@ -1,8 +1,16 @@
 import "es-module-shims";
 
-import { initFederation, LoadRemoteModule } from "vanilla-native-federation";
-import { NFOptions, Logger, useShimImportMap } from "vanilla-native-federation/options";
-import { ForRemoteInfoStorage, Optional, RemoteInfo } from "vanilla-native-federation/sdk";
+import { initFederation, LoadRemoteModule } from "@softarc/native-federation-orchestrator";
+import {
+  NFOptions,
+  Logger,
+  useShimImportMap,
+} from "@softarc/native-federation-orchestrator/options";
+import {
+  ForRemoteInfoStorage,
+  Optional,
+  RemoteInfo,
+} from "@softarc/native-federation-orchestrator/sdk";
 
 export interface BootstrapModule {
   bootstrap: (config: Record<string, any>, loadRemoteModule: LoadRemoteModule) => unknown;
@@ -24,19 +32,19 @@ export interface EnvironmentConfig {
  * module that includes environment configuration.
  */
 function createBootstrapper(
-  loadRemoteModule: LoadRemoteModule<BootstrapModule>,
+  loadRemoteModule: LoadRemoteModule,
   remoteInfoRepo: ForRemoteInfoStorage,
-  env: EnvironmentConfig
+  env: EnvironmentConfig,
 ): LoadRemoteModule {
-  return async (remoteName: string, exposedModule: string): Promise<unknown> => {
-    const module = await loadRemoteModule(remoteName, exposedModule);
+  return async <TModule = unknown>(remoteName: string, exposedModule: string): Promise<TModule> => {
+    const module = await loadRemoteModule<BootstrapModule>(remoteName, exposedModule);
 
     env.scopeUrl = (remoteInfoRepo.tryGet(remoteName) as Optional<RemoteInfo>)
       .map((info) => info.scopeUrl)
       .orElse("/");
 
     console.log(module);
-    return module.bootstrap(env, loadRemoteModule);
+    return module.bootstrap(env, loadRemoteModule) as TModule;
   };
 }
 
@@ -59,6 +67,9 @@ function getCachedEnvironmentConfig(): EnvironmentConfig {
   return JSON.parse(configString!);
 }
 
+/**
+ * An IIFE that auto-executes the orchestrator when the file is imported.
+ */
 (async () => {
   let feedServiceUrl = document.querySelector(`meta[name="piral"]`)?.getAttribute("content")!;
   const env = getCachedEnvironmentConfig();
@@ -79,17 +90,13 @@ function getCachedEnvironmentConfig(): EnvironmentConfig {
     ...useShimImportMap({ shimMode: true }),
   } as NFOptions);
 
-  const bootstrapper = createBootstrapper(
-    loadRemoteModule as LoadRemoteModule<BootstrapModule>,
-    adapters.remoteInfoRepo,
-    env
-  );
+  const bootstrapper = createBootstrapper(loadRemoteModule, adapters.remoteInfoRepo, env);
 
   window.dispatchEvent(
     new CustomEvent("mfe-loader-available", {
       detail: {
         mount: bootstrapper,
       },
-    })
+    }),
   );
 })();

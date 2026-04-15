@@ -1,18 +1,22 @@
 import "es-module-shims";
 
-import { initFederation } from "vanilla-native-federation";
+import { initFederation } from "@softarc/native-federation-orchestrator";
 import {
   consoleLogger,
   NFOptions,
   sessionStorageEntry,
   useShimImportMap,
-} from "vanilla-native-federation/options";
+} from "@softarc/native-federation-orchestrator/options";
 
 (async () => {
   try {
     const feedServiceUrl = document.querySelector(`meta[name="piral"]`)?.getAttribute("content")!;
 
-    const { loadRemoteModule, initRemoteEntry } = await initFederation(feedServiceUrl, {
+    /*
+     * Read more about this in the docs:
+     * https://github.com/native-federation/orchestrator/blob/main/docs/config.md
+     */
+    const options: NFOptions = {
       logLevel: "debug",
       logger: consoleLogger,
       profile: {
@@ -22,7 +26,8 @@ import {
       },
       storage: sessionStorageEntry,
       ...useShimImportMap({ shimMode: true }),
-    } as NFOptions);
+    };
+    const { loadRemoteModule, initRemoteEntry } = await initFederation(feedServiceUrl, options);
 
     window.dispatchEvent(
       new CustomEvent("mfe-loader-available", {
@@ -30,7 +35,7 @@ import {
           loadRemoteModule,
           initRemoteEntry,
         },
-      })
+      }),
     );
   } catch (error) {
     console.error("Orchestrator initialization failed:", error);

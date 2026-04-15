@@ -1,30 +1,26 @@
-import "es-module-shims";
+import { initFederation } from "@softarc/native-federation-orchestrator";
+import { consoleLogger, localStorageEntry } from "@softarc/native-federation-orchestrator/options";
 
-import { initFederation } from "vanilla-native-federation";
-import {
-  NFOptions,
-  useShimImportMap,
-  sessionStorageEntry,
-} from "vanilla-native-federation/options";
-
+/**
+ * An IIFE that auto-executes the orchestrator when the file is imported.
+ */
 (async () => {
-  try {
-    const feedServiceUrl = document.querySelector(`meta[name="piral"]`)?.getAttribute("content")!;
+  const { loadRemoteModule } = await initFederation(
+    // Manifest
+    {
+      "team/mfe1": "http://localhost:3000/remoteEntry.json",
+      "team/mfe2": "http://localhost:4000/remoteEntry.json",
+    },
+    // Options
+    {
+      logLevel: "error",
+      logger: consoleLogger,
+      storage: localStorageEntry,
+      // ... see docs for all available options
+    },
+  );
 
-    const { loadRemoteModule } = await initFederation(feedServiceUrl, {
-      logLevel: "debug",
-      storage: sessionStorageEntry,
-      ...useShimImportMap({ shimMode: true }),
-    } as NFOptions);
-
-    window.dispatchEvent(
-      new CustomEvent("mfe-loader-available", {
-        detail: {
-          loadRemoteModule,
-        },
-      })
-    );
-  } catch (error) {
-    console.error("Orchestrator initialization failed:", error);
-  }
+  // Load specific modules
+  const ButtonComponent = await loadRemoteModule("team/mfe1", "./Button");
+  const HeaderComponent = await loadRemoteModule("team/mfe2", "./Header");
 })();

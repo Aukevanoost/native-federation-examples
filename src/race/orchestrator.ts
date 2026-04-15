@@ -1,12 +1,12 @@
 import "es-module-shims";
 
-import { initFederation } from "vanilla-native-federation";
-import { NFEventRegistry } from "vanilla-native-federation/registry";
+import { initFederation } from "@softarc/native-federation-orchestrator";
+import { NFEventRegistry } from "@softarc/native-federation-orchestrator/registry";
 import {
   NFOptions,
   useShimImportMap,
   sessionStorageEntry,
-} from "vanilla-native-federation/options";
+} from "@softarc/native-federation-orchestrator/options";
 
 declare global {
   interface Window {
@@ -46,7 +46,7 @@ const unsubscribeB = window.__NF_REGISTRY__.on("events-mfe:request-action", (eve
         detail: {
           loadRemoteModule,
         },
-      })
+      }),
     );
     if ((window as any).__NF_REGISTRY__ !== undefined) {
       ((window as any).__NF_REGISTRY__ as NFEventRegistry).register("orch.init-ready", {
