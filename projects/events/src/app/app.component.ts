@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { NFEventRegistry } from 'vanilla-native-federation/sdk';
+import { NFEventRegistry } from '@softarc/native-federation-orchestrator/registry';
 
 declare global {
   interface Window {

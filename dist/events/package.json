@@ -1,5 +1,0 @@
-{
-  "name": "@tractor-store/events",
-  "version": "1.0.0",
-  "main": "browser/remoteEntry.json"
-}

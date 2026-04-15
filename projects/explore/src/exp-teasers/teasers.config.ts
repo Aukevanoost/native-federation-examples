@@ -5,16 +5,14 @@ import {
   provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { LoadRemoteModule } from 'vanilla-native-federation';
+import { LoadRemoteModule } from '@softarc/native-federation-orchestrator';
 import { ENV, EnvironmentConfig } from '../shared/env.config';
 
-export const MODULE_LOADER = new InjectionToken<
-  LoadRemoteModule<{ bootstrap: (loader: LoadRemoteModule) => unknown }>
->('loader');
+export const MODULE_LOADER = new InjectionToken<LoadRemoteModule>('loader');
 
 export const appConfig = (
   loader: LoadRemoteModule,
-  env: EnvironmentConfig
+  env: EnvironmentConfig,
 ): ApplicationConfig => ({
   providers: [
     provideZonelessChangeDetection(),

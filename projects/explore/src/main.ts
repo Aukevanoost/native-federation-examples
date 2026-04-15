@@ -1,5 +1,5 @@
-import { initFederation } from 'vanilla-native-federation';
-import { useShimImportMap } from 'vanilla-native-federation/options';
+import { initFederation } from '@softarc/native-federation-orchestrator';
+import { useShimImportMap } from '@softarc/native-federation-orchestrator/options';
 import { EnvironmentConfig } from './shared/env.config';
 
 const mockEnvironment: EnvironmentConfig = {

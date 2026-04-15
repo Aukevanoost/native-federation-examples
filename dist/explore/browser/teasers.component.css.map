@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["projects/explore/src/exp-teasers/teasers.component.scss"],
-  "sourcesContent": ["// --- COMPONENT\n\n:host {\n  --outer-space: 1.5rem;\n\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 16px;\n  max-width: calc(1000px);\n  padding: 0;\n  display: block;\n}\n\n\n.teaser {\n  &__container {\n    box-sizing: border-box;\n    position: relative;\n  \n    @media (min-width: 500px) {\n      display: flex;\n      gap: 1rem;\n      flex-direction: row;\n    }\n  }\n\n  &__card {\n    flex: 1;\n    display: block;\n    position: relative;\n    margin-bottom: 2rem;\n    color: inherit;\n    text-align: center;\n    text-decoration: none;\n\n    &:hover,\n    &:focus {\n      text-decoration: underline;\n    }\n  }\n\n  &__title {\n    line-height: 1.5;\n  }\n\n  &__img {\n    width: 100%;\n    aspect-ratio: 1000 / 560;\n    margin-bottom: 0.75rem;\n  }\n}\n  \n"],
-  "mappings": ";AAEA;AACE,iBAAA;AAEA;IAAA,gBAAA;IAAA,SAAA;IAAA,KAAA;IAAA;AACA,aAAA;AACA,aAAA;AACA,WAAA;AACA,WAAA;;AAKA,CAAA;AACE,cAAA;AACA,YAAA;;AAEA,OAAA,CAAA,SAAA,EAAA;AAJF,GAAA;AAKI,aAAA;AACA,SAAA;AACA,oBAAA;;;AAIJ,CAAA;AACE,QAAA;AACA,WAAA;AACA,YAAA;AACA,iBAAA;AACA,SAAA;AACA,cAAA;AACA,mBAAA;;AAEA,CATF,YASE;AAAA,CATF,YASE;AAEE,mBAAA;;AAIJ,CAAA;AACE,eAAA;;AAGF,CAAA;AACE,SAAA;AACA,gBAAA,IAAA,CAAA;AACA,iBAAA;;",
-  "names": []
-}

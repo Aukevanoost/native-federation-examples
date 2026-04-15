@@ -1,5 +1,0 @@
-{
-  "name": "@tractor-store/config",
-  "version": "1.2.0",
-  "main": "browser/remoteEntry.json"
-}

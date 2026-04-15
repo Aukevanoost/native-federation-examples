@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../projects/config/src/bootstrap.ts", "../../../projects/config/src/app/app.config.ts"],
-  "sourcesContent": ["import { createApplication } from '@angular/platform-browser';\nimport { appConfig } from './app/app.config';\nimport { createCustomElement } from '@angular/elements';\nimport { EnvironmentConfig } from './app/env.config';\nimport { AppComponent } from './app/app.component';\n\nexport const bootstrap = (env: EnvironmentConfig) =>\n  createApplication(appConfig(env)).then(({ injector }) => {\n    customElements.define(\n      'mfe-config',\n      createCustomElement(AppComponent, { injector })\n    );\n  });\n", "import {\n  ApplicationConfig,\n  provideZonelessChangeDetection,\n} from '@angular/core';\nimport { ENV, EnvironmentConfig } from './env.config';\n\nexport const appConfig = (env: EnvironmentConfig): ApplicationConfig => ({\n  providers: [\n    provideZonelessChangeDetection(),\n    { provide: ENV, useValue: env },\n  ],\n});\n"],
-  "mappings": ";;;;;;AAAA,SAAS,yBAAyB;;;ACAlC,SAEE,sCACK;AAGA,IAAM,YAAY,CAAC,SAA+C;EACvE,WAAW;IACT,+BAA8B;IAC9B,EAAE,SAAS,KAAK,UAAU,IAAG;;;;;ADPjC,SAAS,2BAA2B;AAI7B,IAAM,YAAY,CAAC,QACxB,kBAAkB,UAAU,GAAG,CAAC,EAAE,KAAK,CAAC,EAAE,SAAQ,MAAM;AACtD,iBAAe,OACb,cACA,oBAAoB,cAAc,EAAE,SAAQ,CAAE,CAAC;AAEnD,CAAC;",
-  "names": []
-}

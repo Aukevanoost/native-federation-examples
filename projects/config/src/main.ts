@@ -1,4 +1,4 @@
-import { initFederation } from '@angular-architects/native-federation';
+import { initFederation } from '@angular-architects/native-federation-v4';
 import { EnvironmentConfig } from './app/env.config';
 
 const mockEnvironment: EnvironmentConfig = {
